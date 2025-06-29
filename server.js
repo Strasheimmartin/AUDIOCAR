@@ -207,3 +207,5 @@ if (process.env.NODE_ENV !== 'production') {
         console.log(`Panel de administración en http://localhost:${PORT}/admin.html`);
     });
 }
+
+// Pequeña modificación para forzar la actualización en Git y Vercel. (2025-06-29)
