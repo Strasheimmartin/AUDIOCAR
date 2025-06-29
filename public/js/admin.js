@@ -65,8 +65,8 @@ function loadProducts() {
                 productItem.innerHTML = `
                     <span>${product.name} - $${product.price}</span>
                     <div>
-                        <button onclick="editProduct(${product.id})">Editar</button>
-                        <button onclick="deleteProduct(${product.id})">Eliminar</button>
+                        <button onclick="editProduct('${product._id}')">Editar</button>
+                        <button onclick="deleteProduct('${product._id}')">Eliminar</button>
                     </div>
                 `;
                 productList.appendChild(productItem);
@@ -75,7 +75,7 @@ function loadProducts() {
 }
 
 function saveProduct() {
-    const id = document.getElementById('product-id').value;
+    const id = document.getElementById('product-id').value; // Esto será _id de MongoDB
     const name = document.getElementById('product-name').value;
     const description = document.getElementById('product-description').value;
     const price = parseFloat(document.getElementById('product-price').value);
@@ -119,9 +119,9 @@ function editProduct(id) {
     fetch(`${API_BASE_URL}/products`)
         .then(response => response.json())
         .then(products => {
-            const product = products.find(p => p.id === id);
+            const product = products.find(p => p._id === id);
             if (product) {
-                document.getElementById('product-id').value = product.id;
+                document.getElementById('product-id').value = product._id;
                 document.getElementById('product-name').value = product.name;
                 document.getElementById('product-description').value = product.description;
                 document.getElementById('product-price').value = product.price;
@@ -175,8 +175,8 @@ function loadInquiries() {
                         <small>Recibido: ${new Date(inquiry.timestamp).toLocaleString()}</small>
                     </span>
                     <div>
-                        <button onclick="markInquiryReplied(${inquiry.id})" ${inquiry.replied ? 'disabled' : ''}>${inquiry.replied ? 'Respondido' : 'Marcar como Respondido'}</button>
-                        <button onclick="deleteInquiry(${inquiry.id})">Eliminar</button>
+                        <button onclick="markInquiryReplied('${inquiry._id}')" ${inquiry.replied ? 'disabled' : ''}>${inquiry.replied ? 'Respondido' : 'Marcar como Respondido'}</button>
+                        <button onclick="deleteInquiry('${inquiry._id}')">Eliminar</button>
                     </div>
                 `;
                 inquiryList.appendChild(inquiryItem);
@@ -229,8 +229,8 @@ function loadOffers() {
                         <small>${new Date(offer.timestamp).toLocaleString()}</small>
                     </span>
                     <div>
-                        <button onclick="editOffer(${offer.id})">Editar</button>
-                        <button onclick="deleteOffer(${offer.id})">Eliminar</button>
+                        <button onclick="editOffer('${offer._id}')">Editar</button>
+                        <button onclick="deleteOffer('${offer._id}')">Eliminar</button>
                     </div>
                 `;
                 offerList.appendChild(offerItem);
@@ -239,7 +239,7 @@ function loadOffers() {
 }
 
 function saveOffer() {
-    const id = document.getElementById('offer-id').value;
+    const id = document.getElementById('offer-id').value; // Esto será _id de MongoDB
     const title = document.getElementById('offer-title').value;
     const content = document.getElementById('offer-content').value;
 
@@ -281,9 +281,9 @@ function editOffer(id) {
     fetch(`${API_BASE_URL}/offers`)
         .then(response => response.json())
         .then(offers => {
-            const offer = offers.find(o => o.id === id);
+            const offer = offers.find(o => o._id === id);
             if (offer) {
-                document.getElementById('offer-id').value = offer.id;
+                document.getElementById('offer-id').value = offer._id;
                 document.getElementById('offer-title').value = offer.title;
                 document.getElementById('offer-content').value = offer.content;
             }
