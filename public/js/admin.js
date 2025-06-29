@@ -71,7 +71,8 @@ function loadProducts() {
                 `;
                 productList.appendChild(productItem);
             });
-        });
+        })
+        .catch(error => console.error('Error al cargar productos:', error));
 }
 
 function saveProduct() {
@@ -99,7 +100,8 @@ function saveProduct() {
             alert('Producto actualizado con éxito!');
             clearProductForm();
             loadProducts();
-        });
+        })
+        .catch(error => console.error('Error al actualizar producto:', error));
     } else { // Agregar nuevo producto
         fetch(`${API_BASE_URL}/products`, {
             method: 'POST',
@@ -111,7 +113,8 @@ function saveProduct() {
             alert('Producto agregado con éxito!');
             clearProductForm();
             loadProducts();
-        });
+        })
+        .catch(error => console.error('Error al agregar producto:', error));
     }
 }
 
@@ -127,7 +130,8 @@ function editProduct(id) {
                 document.getElementById('product-price').value = product.price;
                 document.getElementById('product-image').value = product.image;
             }
-        });
+        })
+        .catch(error => console.error('Error al buscar producto para editar:', error));
 }
 
 function deleteProduct(id) {
@@ -138,7 +142,8 @@ function deleteProduct(id) {
         .then(() => {
             alert('Producto eliminado con éxito!');
             loadProducts();
-        });
+        })
+        .catch(error => console.error('Error al eliminar producto:', error));
     }
 }
 
@@ -181,7 +186,8 @@ function loadInquiries() {
                 `;
                 inquiryList.appendChild(inquiryItem);
             });
-        });
+        })
+        .catch(error => console.error('Error al cargar consultas:', error));
 }
 
 function markInquiryReplied(id) {
@@ -194,7 +200,8 @@ function markInquiryReplied(id) {
     .then(() => {
         alert('Consulta marcada como respondida.');
         loadInquiries();
-    });
+    })
+    .catch(error => console.error('Error al marcar consulta como respondida:', error));
 }
 
 function deleteInquiry(id) {
@@ -205,7 +212,8 @@ function deleteInquiry(id) {
         .then(() => {
             alert('Consulta eliminada con éxito!');
             loadInquiries();
-        });
+        })
+        .catch(error => console.error('Error al eliminar consulta:', error));
     }
 }
 
@@ -235,7 +243,8 @@ function loadOffers() {
                 `;
                 offerList.appendChild(offerItem);
             });
-        });
+        })
+        .catch(error => console.error('Error al cargar ofertas:', error));
 }
 
 function saveOffer() {
@@ -261,7 +270,8 @@ function saveOffer() {
             alert('Oferta/Novedad actualizada con éxito!');
             clearOfferForm();
             loadOffers();
-        });
+        })
+        .catch(error => console.error('Error al actualizar oferta:', error));
     } else { // Agregar nueva oferta
         fetch(`${API_BASE_URL}/offers`, {
             method: 'POST',
@@ -273,7 +283,8 @@ function saveOffer() {
             alert('Oferta/Novedad agregada con éxito!');
             clearOfferForm();
             loadOffers();
-        });
+        })
+        .catch(error => console.error('Error al agregar oferta:', error));
     }
 }
 
@@ -287,7 +298,8 @@ function editOffer(id) {
                 document.getElementById('offer-title').value = offer.title;
                 document.getElementById('offer-content').value = offer.content;
             }
-        });
+        })
+        .catch(error => console.error('Error al buscar oferta para editar:', error));
 }
 
 function deleteOffer(id) {
@@ -298,7 +310,8 @@ function deleteOffer(id) {
         .then(() => {
             alert('Oferta/Novedad eliminada con éxito!');
             loadOffers();
-        });
+        })
+        .catch(error => console.error('Error al eliminar oferta:', error));
     }
 }
 
