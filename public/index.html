@@ -52,6 +52,23 @@
        class="whatsapp-fab" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <a href="#" class="admin-login-fab" title="Iniciar Sesión Administrador" onclick="openLoginModal()">
+        <i class="fas fa-user-shield"></i>
+    </a>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLoginModal()">&times;</span>
+            <h2>Acceso Administrador</h2>
+            <input type="text" id="modal-username" placeholder="Usuario">
+            <input type="password" id="modal-password" placeholder="Contraseña">
+            <button onclick="modalLogin()">Entrar</button>
+            <p id="login-error" class="error-message"></p>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/api/offers')
@@ -75,5 +92,6 @@
                 });
         });
     </script>
+    <script src="js/login_modal.js"></script>
 </body>
 </html>
