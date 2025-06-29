@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Configuración de MongoDB
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://audiocar838:Pampa1137@audiocarcluster.zvks6ww.mongodb.net/?retryWrites=true&w=majority&appName=AudiocarCluster'; // ¡REEMPLAZA ESTO!
-const DB_NAME = 'audiocar_db'; // Puedes cambiar el nombre de tu base de datos
+const MONGODB_URI = process.env.MONGODB_URI; // La cadena de conexión se leerá de una variable de entorno
+const DB_NAME = 'audiocar_db'; // Puedes cambiar el nombre de tu base de datos 
 
 let db;
 
