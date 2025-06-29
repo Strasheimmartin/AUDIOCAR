@@ -1,0 +1,456 @@
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #1a1a1a; /* Fondo oscuro para un look moderno */
+    color: #f4f4f4;
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 3px solid #00aaff;
+}
+
+/* Header Principal con fondo futurista */
+.main-header {
+    background: url('https://images.unsplash.com/photo-1526738549149-8e07eca6c147?q=80&w=1925&auto=format&fit=crop') no-repeat center center/cover;
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.main-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.logo {
+    height: 50px; /* Logo más pequeño para banner angosto */
+}
+
+.banner-text {
+    z-index: 1;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.banner-text h1 {
+    font-size: 2rem; /* Título más pequeño para banner angosto */
+    margin: 0;
+    font-weight: bold;
+}
+
+.banner-text p {
+    font-size: 1rem; /* Subtítulo más pequeño para banner angosto */
+}
+
+main {
+    padding: 20px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* Tarjetas de Servicio con fondos */
+.services-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-size: cover;
+    background-position: center;
+    padding: 60px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    text-align: center;
+    flex-basis: 31%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.service-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Asignando fondos a cada tarjeta */
+.service-card.venta {
+    background-image: url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1780&auto=format&fit=crop');
+}
+
+.service-card.reparacion {
+    background-image: url('https://images.unsplash.com/photo-1550009158-94ae76552485?q=80&w=1887&auto=format&fit=crop');
+}
+
+.service-card.instalacion {
+    background-image: url('https://images.unsplash.com/photo-1617861379375-3fd3335e462a?q=80&w=1887&auto=format&fit=crop');
+}
+
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 170, 255, 0.3);
+}
+
+.service-card h2 {
+    margin-top: 0;
+    font-size: 2.5rem; /* Títulos de tarjeta más grandes */
+}
+
+.service-card p {
+    font-size: 1.2rem; /* Texto de tarjeta más grande */
+}
+
+/* Pie de página mejorado */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #000;
+    color: #aaa;
+    margin-top: 60px;
+    border-top: 3px solid #00aaff;
+}
+
+.footer-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para otras páginas */
+.page-content {
+    background: #2b2b2b;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    font-size: 1.2rem; /* Texto más grande */
+}
+
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 1.1rem;
+}
+
+.contact-form button {
+    background: #00aaff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #0088cc;
+}
+
+/* Estilos para la página de Venta */
+#product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #2b2b2b;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+.product-card p {
+    padding: 0 20px;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.product-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00aaff;
+    margin: 25px 0;
+}
+
+/* Estilos para el Panel de Admin */
+#admin-panel {
+    max-width: 800px;
+    margin: auto;
+    background: #2b2b2b;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#login-container, #product-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#admin-panel input, #admin-panel textarea, #admin-panel button {
+    padding: 18px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+#admin-panel button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#admin-panel button:hover {
+    background: #218838;
+}
+
+#admin-product-list {
+    margin-top: 20px;
+    color: #f4f4f4;
+}
+
+/* Estilos para la sección de Ofertas y Novedades */
+#offers-section {
+    margin-top: 60px;
+    background: #2b2b2b;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#offers-section h2 {
+    text-align: center;
+    color: #00aaff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+#offers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.offer-item {
+    background: #333;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-left: 5px solid #00aaff;
+}
+
+.offer-item h3 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.offer-item p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.offer-item small {
+    display: block;
+    margin-top: 15px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Estilos para el panel de administración */
+.admin-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.admin-nav button {
+    background: #00aaff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+}
+
+.admin-nav button:hover {
+    background: #0088cc;
+}
+
+.admin-section h2 {
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background: #333;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.form-container h3 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.admin-item {
+    background: #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #444;
+}
+
+.admin-item span {
+    flex-grow: 1;
+    color: #f4f4f4;
+}
+
+.admin-item button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.admin-item button:hover {
+    opacity: 0.9;
+}
+
+.admin-item button:nth-child(1) { /* Editar */
+    background-color: #ffc107; /* Amarillo */
+    color: #333;
+}
+
+.admin-item button:nth-child(2) { /* Eliminar */
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+}
+
+.inquiry-item small {
+    display: block;
+    color: #aaa;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-section {
+        flex-direction: column;
+    }
+
+    .banner-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .banner-text p {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        height: 70px;
+    }
+}

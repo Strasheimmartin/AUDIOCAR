@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación - Audiocar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="images/audiocar logo.jpg" alt="Audiocar Logo" class="logo"></a>
+        </div>
+        <h1>Servicio de Instalación</h1>
+    </header>
+
+    <main class="page-content">
+        <h2>Instalaciones profesionales</h2>
+        <p>Realizamos instalaciones de sistemas de sonido, alarmas, y accesorios. Garantizamos un trabajo prolijo y de alta calidad para tu vehículo.</p>
+        <p>Agenda un turno o consulta nuestros precios. Contáctanos a través de nuestro <a href="mailto:contacto@audiocar.com">email</a> o por teléfono al <strong>291-6480644</strong>.</p>
+
+        <form class="contact-form" onsubmit="submitInquiry(event, 'instalacion')">
+            <h3>Agenda tu turno</h3>
+            <input type="text" id="instalacion-name" placeholder="Tu Nombre" required>
+            <input type="tel" id="instalacion-phone" placeholder="Tu Teléfono" required>
+            <input type="text" id="instalacion-carModel" placeholder="Marca y modelo de tu auto" required>
+            <textarea id="instalacion-message" placeholder="¿Qué equipo deseas instalar?" rows="5" required></textarea>
+            <button type="submit">Solicitar Turno</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Dirección:</strong> Almafuerte 838</p>
+            <p><strong>Teléfono:</strong> 291-6480644</p>
+        </div>
+        <p>&copy; 2025 Audiocar. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5492916480644?text=Hola,%20quisiera%20agendar%20una%20instalación."
+       class="whatsapp-fab" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script src="js/inquiry.js"></script>
+</body>
+</html>

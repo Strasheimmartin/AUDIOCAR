@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Audiocar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+    </header>
+
+    <main id="admin-panel">
+        <div id="login-container">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Entrar</button>
+        </div>
+
+        <div id="admin-dashboard" style="display: none;">
+            <nav class="admin-nav">
+                <button onclick="showSection('products')">Gestión de Productos</button>
+                <button onclick="showSection('inquiries')">Gestión de Consultas</button>
+                <button onclick="showSection('offers')">Gestión de Ofertas/Novedades</button>
+                <button onclick="logout()">Cerrar Sesión</button>
+            </nav>
+
+            <section id="products-section" class="admin-section">
+                <h2>Gestión de Productos</h2>
+                <div class="form-container">
+                    <h3>Cargar/Editar Producto</h3>
+                    <input type="hidden" id="product-id">
+                    <input type="text" id="product-name" placeholder="Nombre del Producto">
+                    <textarea id="product-description" placeholder="Descripción"></textarea>
+                    <input type="number" id="product-price" placeholder="Precio">
+                    <input type="text" id="product-image" placeholder="URL de la Imagen">
+                    <button onclick="saveProduct()">Guardar Producto</button>
+                </div>
+                
+                <h3>Productos Actuales</h3>
+                <div id="admin-product-list"></div>
+            </section>
+
+            <section id="inquiries-section" class="admin-section" style="display: none;">
+                <h2>Gestión de Consultas</h2>
+                <h3>Consultas Recibidas</h3>
+                <div id="admin-inquiry-list"></div>
+            </section>
+
+            <section id="offers-section" class="admin-section" style="display: none;">
+                <h2>Gestión de Ofertas/Novedades</h2>
+                <div class="form-container">
+                    <h3>Cargar/Editar Oferta/Novedad</h3>
+                    <input type="hidden" id="offer-id">
+                    <input type="text" id="offer-title" placeholder="Título">
+                    <textarea id="offer-content" placeholder="Contenido"></textarea>
+                    <button onclick="saveOffer()">Guardar Oferta/Novedad</button>
+                </div>
+                <h3>Ofertas/Novedades Actuales</h3>
+                <div id="admin-offer-list"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

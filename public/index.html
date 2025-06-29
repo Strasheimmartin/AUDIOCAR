@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiocar - Sonido y Accesorios para Autos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="images/audiocar logo.jpg" alt="Audiocar Logo" class="logo">
+        </div>
+        <div class="banner-text">
+            <h1>AUDIOCAR</h1>
+            <p>MÁS DE 50 AÑOS DE EXPERIENCIA, CALIDAD, ESTÉTICA Y PROLIJIDAD ASEGURADA</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="services-section">
+            <div class="service-card venta" onclick="location.href='venta.html'">
+                <h2>Venta</h2>
+                <p>Los mejores equipos y accesorios del mercado.</p>
+            </div>
+            <div class="service-card reparacion" onclick="location.href='reparacion.html'">
+                <h2>Reparación</h2>
+                <p>Servicio técnico especializado para tus equipos.</p>
+            </div>
+            <div class="service-card instalacion" onclick="location.href='instalacion.html'">
+                <h2>Instalación</h2>
+                <p>Instalamos tus equipos con la máxima prolijidad y garantía.</p>
+            </div>
+        </section>
+
+        <section id="offers-section">
+            <h2>Ofertas y Novedades</h2>
+            <div id="offers-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Dirección:</strong> Almafuerte 838</p>
+            <p><strong>Teléfono:</strong> 291-6480644</p>
+        </div>
+        <p>&copy; 2025 Audiocar. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5492916480644?text=Hola,%20estoy%20interesado%20en%20sus%20servicios."
+       class="whatsapp-fab" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/offers')
+                .then(response => response.json())
+                .then(offers => {
+                    const offersList = document.getElementById('offers-list');
+                    if (offers.length === 0) {
+                        offersList.innerHTML = '<p>No hay ofertas o novedades en este momento.</p>';
+                        return;
+                    }
+                    offers.forEach(offer => {
+                        const offerItem = document.createElement('div');
+                        offerItem.className = 'offer-item';
+                        offerItem.innerHTML = `
+                            <h3>${offer.title}</h3>
+                            <p>${offer.content}</p>
+                            <small>${new Date(offer.timestamp).toLocaleDateString()}</small>
+                        `;
+                        offersList.appendChild(offerItem);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
